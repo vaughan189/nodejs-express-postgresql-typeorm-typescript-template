@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-express-typescript-sequelize-template",
+  "name": "nodejs-express-typescript-typeorm-template",
   "version": "1.0.0",
-  "description": "NodeJS Express TypeScript and Sequelize",
+  "description": "NodeJS Express TypeScript and Typeorm",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vaughan189/nodejs-express-typescript-sequelize-template.git"
+    "url": "git+https://github.com/vaughan189/nodejs-express-typescript-typeorm-template.git"
   },
   "author": "vaughan188@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vaughan189/nodejs-express-typescript-sequelize-template/issues"
+    "url": "https://github.com/vaughan189/nodejs-express-typescript-typeorm-template/issues"
   },
-  "homepage": "https://github.com/vaughan189/nodejs-express-typescript-sequelize-template#readme",
+  "homepage": "https://github.com/vaughan189/nodejs-express-typescript-typeorm-template#readme",
   "devDependencies": {
     "@types/node": "^14.0.20",
     "@typescript-eslint/eslint-plugin": "^3.6.0",

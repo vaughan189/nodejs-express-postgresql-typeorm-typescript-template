@@ -1,2 +1,2 @@
-# nodejs-express-typescript-sequelize-template
-NodeJS Express TypeScript and Sequelize
+# nodejs-express-typescript-typeorm-template
+NodeJS Express TypeScript and Typeorm

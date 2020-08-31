@@ -1,0 +1,23 @@
+version: '3'
+services:
+  database:
+    image: "postgres"
+    restart: always
+    env_file:
+      - database.env
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - database.env
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+volumes:
+  postgresql:
+  pgadmin:

@@ -1,10 +1,15 @@
 {
     "root": true,
+    "env": {
+        "browser": true,
+        "node": true
+    },
     "parser": "@typescript-eslint/parser",
     "plugins": [
         "@typescript-eslint",
         "no-loops",
         "prettier"
+        // "plugin:shopify/esnext"
     ],
     "extends": [
         "eslint:recommended",
@@ -46,7 +51,7 @@
         // Best Practices
         "accessor-pairs": "error",
         "block-scoped-var": "error",
-        "class-methods-use-this": "error",
+        // "class-methods-use-this": "error",
         "complexity": ["error", 10],
         "consistent-return": "error",
         "curly": "error",
@@ -105,6 +110,7 @@
         "vars-on-top": "warn",
         "wrap-iife": "warn",
         "yoda": "warn",
+        "no-process-env": "off",
 
         // Strict Mode
         "strict": "off",
@@ -119,6 +125,18 @@
         "no-undef-init": "off",
         "no-undefined": "warn",
         "no-unused-vars": "warn",
-        "no-use-before-define": "warn"
+        "no-use-before-define": "warn",
+
+        // ECMAScript 6
+        "sort-imports": ["error", {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        }],
+
+        // Stylistic Issues
+        "sort-vars": ["error", { "ignoreCase": false }],
+        "no-duplicate-imports": ["error", { "includeExports": true }]
     }
 }

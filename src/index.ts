@@ -1,19 +1,15 @@
 /* eslint-disable no-console */
 import 'reflect-metadata';
 import 'dotenv/config';
-import { config, response } from './config';
+import { CONFIG } from './config/config';
 import { connectDB } from './db/database';
 import express from 'express';
+import routes from './routes';
 
 const app = express();
+app.use('/', routes);
 
-app.get('/api', (_req: express.Request, res: express.Response) => {
-  res.status(response.success).json({
-    hello: 'World!'
-  });
-});
-
-const port = process.env.PORT || config.PORT;
+const port = process.env.PORT || CONFIG.PORT;
 const startServer = async () => {
   app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);

@@ -1,4 +1,3 @@
-// import { bar, barAsync } from '../src/foo';
 import 'mocha';
 import { expect } from 'chai';
 

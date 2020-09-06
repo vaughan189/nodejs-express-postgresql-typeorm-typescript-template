@@ -11,7 +11,7 @@ services:
       - postgresql:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
-    environment:
+    env_file:
       - database.env
     restart: always
     ports:

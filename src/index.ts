@@ -7,7 +7,11 @@ import express from 'express';
 import routes from './routes';
 
 const app = express();
-app.use('/', routes);
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/api/v1', routes);
 
 const port = process.env.PORT || CONFIG.PORT;
 const startServer = async () => {

@@ -15,8 +15,8 @@
     "coverage": "nyc -r text -r text-summary -r html npm run test",
     "db:sync": "npx typeorm schema:sync",
     "db:drop": "npx typeorm schema:drop",
-    "migrations:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
-    "migrations:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
+    "migrations:run": "npx typeorm migration:run",
+    "migrations:revert": "npx typeorm migration:revert"
   },
   "repository": {
     "type": "git",

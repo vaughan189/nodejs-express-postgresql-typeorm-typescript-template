@@ -10,7 +10,12 @@ class AuthController {
   static login = async (req: Request, res: Response): Promise<void> => {
     const { username, password } = req.body;
     if (!(username && password)) {
-      res.status(RESPONSE_CODE.BAD_REQUEST).send();
+      res.status(RESPONSE_CODE.BAD_REQUEST);
+      res.send({
+        status: RESPONSE_CODE.BAD_REQUEST,
+        message: 'username or password not defined'
+      });
+      return;
     }
 
     const userRepository = getRepository(User);

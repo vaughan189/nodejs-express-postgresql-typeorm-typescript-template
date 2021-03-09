@@ -33,9 +33,8 @@ class AuthController {
       CONFIG.jwtSecret,
       { expiresIn: '1h' }
     );
-
     //Send the jwt in the response
-    res.send(token);
+    res.send({ token, data: { userId: user.id, username: user.username } });
   };
 
   static changePassword = async (

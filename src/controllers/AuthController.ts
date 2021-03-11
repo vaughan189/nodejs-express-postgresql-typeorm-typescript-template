@@ -23,8 +23,12 @@ class AuthController {
       where: { username }
     });
 
-    if (!user.password) {
-      res.status(RESPONSE_CODE.UN_AUTHORIZED).send();
+    if (!user.checkIfUnEncryptedPasswordIsValid(password)) {
+      res.status(RESPONSE_CODE.BAD_REQUEST);
+      res.send({
+        status: RESPONSE_CODE.BAD_REQUEST,
+        message: 'Invalid Username or Password'
+      });
       return;
     }
 

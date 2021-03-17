@@ -19,11 +19,11 @@ class AuthController {
     }
 
     const userRepository = getRepository(User);
-    const user: User = await userRepository.findOneOrFail({
+    const user: User | undefined = await userRepository.findOne({
       where: { username }
     });
 
-    if (!user.checkIfUnEncryptedPasswordIsValid(password)) {
+    if (!user || !user.checkIfUnEncryptedPasswordIsValid(password)) {
       res.status(RESPONSE_CODE.BAD_REQUEST);
       res.send({
         status: RESPONSE_CODE.BAD_REQUEST,
